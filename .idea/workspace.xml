@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="152a6a83-8deb-4510-bbb4-5ce375d93552" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disquaire_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/disquaire_project/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/disquaire.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
