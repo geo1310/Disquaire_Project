@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 16 jan. 2020 à 16:59
+-- Généré le :  ven. 17 jan. 2020 à 09:04
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -31,10 +31,10 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `auth_group`;
 CREATE TABLE IF NOT EXISTS `auth_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(150) NOT NULL,
+  `name` varchar(150) COLLATE utf8_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 -- --------------------------------------------------------
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `auth_group_permissions` (
   UNIQUE KEY `auth_group_permissions_group_id_permission_id_0cd325b0_uniq` (`group_id`,`permission_id`),
   KEY `auth_group_permissions_group_id_b120cbf9` (`group_id`),
   KEY `auth_group_permissions_permission_id_84c5c92e` (`permission_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 -- --------------------------------------------------------
 
@@ -62,13 +62,13 @@ CREATE TABLE IF NOT EXISTS `auth_group_permissions` (
 DROP TABLE IF EXISTS `auth_permission`;
 CREATE TABLE IF NOT EXISTS `auth_permission` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
   `content_type_id` int(11) NOT NULL,
-  `codename` varchar(100) NOT NULL,
+  `codename` varchar(100) COLLATE utf8_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   KEY `auth_permission_content_type_id_2f476e4b` (`content_type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `auth_permission`
@@ -125,26 +125,26 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 DROP TABLE IF EXISTS `auth_user`;
 CREATE TABLE IF NOT EXISTS `auth_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `password` varchar(128) NOT NULL,
+  `password` varchar(128) COLLATE utf8_unicode_520_ci NOT NULL,
   `last_login` datetime(6) DEFAULT NULL,
   `is_superuser` tinyint(1) NOT NULL,
-  `username` varchar(150) NOT NULL,
-  `first_name` varchar(30) NOT NULL,
-  `last_name` varchar(150) NOT NULL,
-  `email` varchar(254) NOT NULL,
+  `username` varchar(150) COLLATE utf8_unicode_520_ci NOT NULL,
+  `first_name` varchar(30) COLLATE utf8_unicode_520_ci NOT NULL,
+  `last_name` varchar(150) COLLATE utf8_unicode_520_ci NOT NULL,
+  `email` varchar(254) COLLATE utf8_unicode_520_ci NOT NULL,
   `is_staff` tinyint(1) NOT NULL,
   `is_active` tinyint(1) NOT NULL,
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `auth_user`
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$180000$8MjHvD4po6kQ$1tT0FnhwsJze7VL8z9E5u8cyV8IByH6hPUOYN7AMGXw=', '2020-01-13 10:14:21.513295', 1, 'admin', '', '', 'gbriche59@yahoo.fr', 1, 1, '2020-01-12 20:27:32.897853');
+(1, 'pbkdf2_sha256$180000$8MjHvD4po6kQ$1tT0FnhwsJze7VL8z9E5u8cyV8IByH6hPUOYN7AMGXw=', '2020-01-16 21:51:52.301771', 1, 'admin', '', '', 'gbriche59@yahoo.fr', 1, 1, '2020-01-12 20:27:32.897853');
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `auth_user_groups` (
   UNIQUE KEY `auth_user_groups_user_id_group_id_94350c0c_uniq` (`user_id`,`group_id`),
   KEY `auth_user_groups_user_id_6a12ed8b` (`user_id`),
   KEY `auth_user_groups_group_id_97559544` (`group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 -- --------------------------------------------------------
 
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `auth_user_user_permissions` (
   UNIQUE KEY `auth_user_user_permissions_user_id_permission_id_14a6b632_uniq` (`user_id`,`permission_id`),
   KEY `auth_user_user_permissions_user_id_a95ead1b` (`user_id`),
   KEY `auth_user_user_permissions_permission_id_1fbb5f2c` (`permission_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 -- --------------------------------------------------------
 
@@ -190,10 +190,10 @@ DROP TABLE IF EXISTS `django_admin_log`;
 CREATE TABLE IF NOT EXISTS `django_admin_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `action_time` datetime(6) NOT NULL,
-  `object_id` longtext,
-  `object_repr` varchar(200) NOT NULL,
+  `object_id` longtext COLLATE utf8_unicode_520_ci,
+  `object_repr` varchar(200) COLLATE utf8_unicode_520_ci NOT NULL,
   `action_flag` smallint(5) UNSIGNED NOT NULL,
-  `change_message` longtext NOT NULL,
+  `change_message` longtext COLLATE utf8_unicode_520_ci NOT NULL,
   `content_type_id` int(11) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -227,7 +227,15 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (19, '2020-01-13 20:16:12.035425', '5', 'gbriche', 2, '[{\"changed\": {\"name\": \"r\\u00e9servation\", \"object\": \"gbriche\", \"fields\": [\"Demande trait\\u00e9e ?\"]}}]', 3, 1),
 (20, '2020-01-13 20:17:02.247917', '15', 'gbriche', 2, '[{\"changed\": {\"fields\": [\"Demande trait\\u00e9e ?\"]}}]', 4, 1),
 (21, '2020-01-13 20:26:58.519045', '5', 'geo1310', 2, '[{\"changed\": {\"fields\": [\"Nom\"]}}]', 3, 1),
-(22, '2020-01-13 20:27:09.706659', '4', 'gbriche', 2, '[{\"changed\": {\"fields\": [\"Nom\"]}}]', 3, 1);
+(22, '2020-01-13 20:27:09.706659', '4', 'gbriche', 2, '[{\"changed\": {\"fields\": [\"Nom\"]}}]', 3, 1),
+(23, '2020-01-16 21:53:53.291196', '7', 'UB 40', 1, '[{\"added\": {}}]', 2, 1),
+(24, '2020-01-16 21:56:10.276647', '11', 'Labour of Love', 1, '[{\"added\": {}}]', 1, 1),
+(25, '2020-01-16 22:02:54.947275', '4', 'gbriche', 2, '[{\"changed\": {\"name\": \"r\\u00e9servation\", \"object\": \"gbriche\", \"fields\": [\"Demande trait\\u00e9e ?\"]}}, {\"changed\": {\"name\": \"r\\u00e9servation\", \"object\": \"gbriche\", \"fields\": [\"Demande trait\\u00e9e ?\"]}}]', 3, 1),
+(26, '2020-01-16 22:03:00.198464', '5', 'geo1310', 2, '[]', 3, 1),
+(27, '2020-01-16 22:03:17.240156', '4', 'gbriche', 2, '[{\"deleted\": {\"name\": \"r\\u00e9servation\", \"object\": \"gbriche\"}}, {\"deleted\": {\"name\": \"r\\u00e9servation\", \"object\": \"gbriche\"}}]', 3, 1),
+(28, '2020-01-16 22:03:53.612965', '5', 'geo1310', 2, '[{\"deleted\": {\"name\": \"r\\u00e9servation\", \"object\": \"geo1310\"}}, {\"deleted\": {\"name\": \"r\\u00e9servation\", \"object\": \"geo1310\"}}, {\"deleted\": {\"name\": \"r\\u00e9servation\", \"object\": \"geo1310\"}}]', 3, 1),
+(29, '2020-01-16 22:08:02.529922', '8', 'Michael Jackson', 1, '[{\"added\": {}}]', 2, 1),
+(30, '2020-01-16 22:08:54.353933', '12', 'Dangerous', 1, '[{\"added\": {}}]', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -238,11 +246,11 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 DROP TABLE IF EXISTS `django_content_type`;
 CREATE TABLE IF NOT EXISTS `django_content_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `app_label` varchar(100) NOT NULL,
-  `model` varchar(100) NOT NULL,
+  `app_label` varchar(100) COLLATE utf8_unicode_520_ci NOT NULL,
+  `model` varchar(100) COLLATE utf8_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `django_content_type`
@@ -269,11 +277,11 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 DROP TABLE IF EXISTS `django_migrations`;
 CREATE TABLE IF NOT EXISTS `django_migrations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `app` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `app` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_520_ci NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `django_migrations`
@@ -307,12 +315,12 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 
 DROP TABLE IF EXISTS `django_session`;
 CREATE TABLE IF NOT EXISTS `django_session` (
-  `session_key` varchar(40) NOT NULL,
-  `session_data` longtext NOT NULL,
+  `session_key` varchar(40) COLLATE utf8_unicode_520_ci NOT NULL,
+  `session_data` longtext COLLATE utf8_unicode_520_ci NOT NULL,
   `expire_date` datetime(6) NOT NULL,
   PRIMARY KEY (`session_key`),
   KEY `django_session_expire_date_a5c62663` (`expire_date`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `django_session`
@@ -320,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `django_session` (
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 ('dti5c40htnsrbxf8m0zp101g633uqpyb', 'MTI3OTcyODViMDI1YTQ3N2VmYzVlNGJjNGQwZjUxM2JlOGE3NjA0YTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJhMTNkZGMzZDA1YjEzMGY1OTBmMzI2NjlkODBkZDQwYmFjYTAxYWJhIn0=', '2020-01-26 20:27:56.662617'),
-('bg4bv77co2p2b2eozodzkcwysw3l574u', 'MTI3OTcyODViMDI1YTQ3N2VmYzVlNGJjNGQwZjUxM2JlOGE3NjA0YTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJhMTNkZGMzZDA1YjEzMGY1OTBmMzI2NjlkODBkZDQwYmFjYTAxYWJhIn0=', '2020-01-27 10:14:21.528919');
+('mspvm3k22o4zxm1yzagpxs9mc7b3md0m', 'NDI3YmU5M2Q1MjEzNmY5MmRmZmE0NTNiYmI4NWQzMjlhMjlmZDEzZDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3MmU1MjQxMGZlMDI0MTMyOTExMWEwNjZlZWQwYWI0ZWY0Yzg5NDlkIn0=', '2020-01-30 21:51:52.317395');
 
 -- --------------------------------------------------------
 
@@ -334,26 +342,28 @@ CREATE TABLE IF NOT EXISTS `store_album` (
   `reference` int(11) DEFAULT NULL,
   `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   `available` tinyint(1) NOT NULL,
-  `title` varchar(200) NOT NULL,
-  `picture` varchar(200) NOT NULL,
+  `title` varchar(200) COLLATE utf8_unicode_520_ci NOT NULL,
+  `picture` varchar(200) COLLATE utf8_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `store_album`
 --
 
 INSERT INTO `store_album` (`id`, `reference`, `created_at`, `available`, `title`, `picture`) VALUES
-(1, 1, '2020-01-07 01:06:06.000000', 0, 'Sarbacane', 'https://images-na.ssl-images-amazon.com/images/I/7181sCwyHRL._SL1500_.jpg'),
-(2, 1, '2020-01-10 21:32:39.788005', 0, 'For Ever', 'https://images-na.ssl-images-amazon.com/images/I/71gYUcfcTlL._SX355_.jpg'),
-(3, NULL, '2020-01-10 21:34:42.712148', 0, 'Podium', 'https://static.actu.fr/uploads/2018/06/podium.jpg'),
+(1, 1, '2020-01-07 01:06:06.000000', 1, 'Sarbacane', 'https://images-na.ssl-images-amazon.com/images/I/7181sCwyHRL._SL1500_.jpg'),
+(2, 2, '2020-01-10 21:32:39.788005', 1, 'For Ever', 'https://images-na.ssl-images-amazon.com/images/I/71gYUcfcTlL._SX355_.jpg'),
+(3, 3, '2020-01-10 21:34:42.712148', 1, 'Podium', 'https://static.actu.fr/uploads/2018/06/podium.jpg'),
 (4, NULL, '2020-01-10 21:36:01.086601', 1, 'Alors Regarde', 'https://m.media-amazon.com/images/I/81XF8uYXV6L._SS500_.jpg'),
-(5, NULL, '2020-01-10 21:39:23.656887', 0, 'Laisse Béton', 'http://ekladata.com/hGcFTKa_ec429SxsiaSWw44vRZI.jpg'),
+(5, NULL, '2020-01-10 21:39:23.656887', 1, 'Laisse Béton', 'http://ekladata.com/hGcFTKa_ec429SxsiaSWw44vRZI.jpg'),
 (6, NULL, '2020-01-10 21:40:32.835528', 1, 'Morgane de toi', 'https://images-na.ssl-images-amazon.com/images/I/819p3X4tLeL._SL1400_.jpg'),
 (7, NULL, '2020-01-10 21:41:41.958660', 1, 'Samedi soir sur la Terre', 'https://static.fnac-static.com/multimedia/Images/FR/NR/50/87/6f/7309136/1540-1/tsp20150826154808/Samedi-soir-sur-la-terre.jpg'),
 (8, NULL, '2020-01-11 14:47:00.000000', 1, 'Elle a les Yeux Révolver', 'https://media.ultratop.be/cover/big/marc_lavoine-elle_a_les_yeux_revolver_s.jpg'),
 (9, 0, '2020-01-11 14:51:00.000000', 1, 'Ainsi soit Je', 'https://i1.sndcdn.com/artworks-000319493679-d8nvzs-t500x500.jpg'),
-(10, 1, '2020-01-12 19:57:59.732257', 0, 'L\'autre', 'https://www.innamoramento.net/public/referentiel/240/160_2012-11-14-08-12-55_1.JPG');
+(10, 1, '2020-01-12 19:57:59.732257', 1, 'L\'autre', 'https://www.innamoramento.net/public/referentiel/240/160_2012-11-14-08-12-55_1.JPG'),
+(11, 1, '2020-01-16 20:56:10.245397', 1, 'Labour of Love', 'https://images-na.ssl-images-amazon.com/images/I/81NUhYY8gSL._SL1300_.jpg'),
+(12, 3, '2020-01-16 21:08:54.322683', 1, 'Dangerous', 'https://www.discobuzz.fr/8532-14549-large_default/michael-jackson-dangerous-double-lp-vinyl-album.jpg');
 
 -- --------------------------------------------------------
 
@@ -370,7 +380,7 @@ CREATE TABLE IF NOT EXISTS `store_album_artists` (
   UNIQUE KEY `store_album_artists_album_id_artist_id_9c8fa2e6_uniq` (`album_id`,`artist_id`),
   KEY `store_album_artists_album_id_2d0c1a8e` (`album_id`),
   KEY `store_album_artists_artist_id_9d9c2c0a` (`artist_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `store_album_artists`
@@ -386,7 +396,9 @@ INSERT INTO `store_album_artists` (`id`, `album_id`, `artist_id`) VALUES
 (7, 7, 1),
 (8, 8, 5),
 (10, 9, 6),
-(11, 10, 6);
+(11, 10, 6),
+(12, 11, 7),
+(13, 12, 8);
 
 -- --------------------------------------------------------
 
@@ -397,10 +409,10 @@ INSERT INTO `store_album_artists` (`id`, `album_id`, `artist_id`) VALUES
 DROP TABLE IF EXISTS `store_artist`;
 CREATE TABLE IF NOT EXISTS `store_artist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `store_artist`
@@ -412,7 +424,9 @@ INSERT INTO `store_artist` (`id`, `name`) VALUES
 (3, 'Claude Francois'),
 (4, 'Renaud'),
 (5, 'Marc Lavoine'),
-(6, 'Mylene Farmer');
+(6, 'Mylene Farmer'),
+(7, 'UB 40'),
+(8, 'Michael Jackson');
 
 -- --------------------------------------------------------
 
@@ -430,18 +444,7 @@ CREATE TABLE IF NOT EXISTS `store_booking` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `album_id` (`album_id`),
   KEY `store_booking_contact_id_d46d585e` (`contact_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `store_booking`
---
-
-INSERT INTO `store_booking` (`id`, `created_at`, `contacted`, `album_id`, `contact_id`) VALUES
-(17, '2020-01-13 19:15:19.850186', 1, 2, 5),
-(15, '2020-01-13 19:11:49.762093', 1, 1, 5),
-(18, '2020-01-13 19:15:48.152644', 1, 10, 5),
-(20, '2020-01-13 20:27:41.045999', 0, 5, 4),
-(21, '2020-01-13 21:37:28.835615', 0, 3, 4);
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 -- --------------------------------------------------------
 
@@ -452,10 +455,10 @@ INSERT INTO `store_booking` (`id`, `created_at`, `contacted`, `album_id`, `conta
 DROP TABLE IF EXISTS `store_contact`;
 CREATE TABLE IF NOT EXISTS `store_contact` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(100) NOT NULL,
-  `name` varchar(200) NOT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_520_ci NOT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Déchargement des données de la table `store_contact`
