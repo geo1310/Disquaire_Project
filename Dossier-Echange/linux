@@ -1,0 +1,22 @@
+paquets :
+
+dpkg -l # liste des paquets avec description
+dpkg --get-selections # liste des paquets sans description
+
+ /var/lib/dpkg/status # fichier liste paquets
+
+# liste des paquets installés
+ dpkg --get-selections | grep -v deinstall
+ dpkg --get-selections > liste-des-paquets_`hostname`_`date +%H:%M-%d-%m-%Y`
+
+# réinstallation
+sudo apt-get update
+sudo apt-get dist-upgrade
+dpkg –set-selections < ubuntu-files
+
+synaptic # gestionnaire de paquets avec interface graphique
+
+Python mysqlclient :
+
+sudo apt-get install libssl-dev # Unable to install mysqlclient using pip (Ubuntu 18.04 LTS)
+
