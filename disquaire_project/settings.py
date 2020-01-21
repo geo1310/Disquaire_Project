@@ -103,10 +103,10 @@ WSGI_APPLICATION = 'disquaire_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',      
         'NAME': 'disquaire',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'lmeeucJD=08',
         'HOST': '',
         'PORT': '3306',
         'ATOMIC_REQUESTS': False,# transactions
