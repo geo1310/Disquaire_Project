@@ -1,3 +1,49 @@
+
+WINDOWS POWERSHELL :
+--------------------
+
+PowerShell ISE -> éditeur de script intégré ( alternative à PowerGUI )
+
+Windows PowerShell est la nouvelle interface système de Microsoft
+le lancer en admin
+CMD est l’un des derniers vestiges du système d’exploitation MS-DOS
+
+Get-ExecutionPolicy -> connaitre le mode utilisé
+Set-ExecutionPolicy Unrestricted
+
+    Restricted : aucun script ne peut être exécuté. PowerShell est utilisable uniquement en mode interactif.
+
+    AllSigned : seuls les scripts signés peuvent être exécutés.
+
+    RemoteSigned : les scripts téléchargés depuis Internet doivent être signés pour être exécutés.
+    Les scripts présents sur votre poste de travail ne sont pas concernés et peuvent être exécutés.
+
+    Unrestricted : pas de restrictions. Les scripts peuvent être exécutés.
+
+C:\Windows\system32> Send-MailMessage -From "geo1310@hotmail.fr" -To "gbriche59@yahoo.fr" -Subject "votre objet" -SmtpServer "smtp.mail.yahoo.fr" -Body "Le corps du mail" -Attachments "le chemin d’accès à votre fichier"
+
+https://www.youporn.com/watch/14901473/bratty-sis-horny-brother-slips-cock-into-besties-teen-pussy-s6-e1/
+
+
+#
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
+Add-AppxPackage .\app_name.appx
+
+
+
+
+
+GIT :
+-----
+
+git config --global user.name "name"
+git config --global user.email "email"
+
+git clone lienFourniParGitHub
+
+
+
 VIRTUAL BOX :
 -------------
 
@@ -15,13 +61,37 @@ VIRTUAL BOX :
 LINUX :
 --------
 
-* config réseau :
+* SSH SERVER :
+
+sudo apt-get install openssh-server
+sudo /etc/init.d/ssh start, stop, status, reload
+
+/etc/ssh/ssh_config # fichier de config
+
+ssh login@ip # ouvrir une connection
+
+* CONFIG RESEAU :
 
 hostname
 hostname -I
 /sbin/ifconfig
 
-* paquets :
+
+* ENVIRONNEMENT VIRTUEL :
+
+sudo pip3 install virtualenv
+virtualenv --version
+
+mkdir django_apps
+cd djanjo_apps
+virtualenv envname
+. envname/bin/activate
+
+
+* PAQUETS :
+
+dpkg (pour Debian package) est l'outil de bas niveau gérant les paquets
+des distributions basées sur Debian
 
 sudo apt update # mise à jour de l’index de paquet du serveur
 
@@ -70,13 +140,15 @@ Pour tester l’installation, dans le répertoire /var/www/html, créez le fichi
 mysql :
 sudo apt-get install mysql-server
 sudo /etc/init.d/mysql start
-mysql_secure_installation # personnaliser la sécurisation
 
+# personnaliser la sécurisation
+sudo mysql_secure_installation utility
 # changement de mot de passe root
-dans la console msql :
+sudo mysql -u root -p
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'le_mot_de_pass_choisi';
 
-phpmyadmin :
+PHPMYADMIN :
+
 sudo apt-get install phpmyadmin
 
 Afin d’accéder à l’interface de gestion de phpMyAdmin, vous devrez finaliser la configuration
@@ -84,8 +156,13 @@ de votre serveur Apache. Pour cela, éditez le fichier /etc/apache2/apache2.conf
 Ajouter à la fin :
 # Include phpMyAdmin
 Include /etc/phpmyadmin/apache.conf
-relancer apache
+sudo service apache2 restart
 
+# erreur count dans phpmyadmin
+
+ sudo vim /usr/share/phpmyadmin/libraries/sql.lib.php
+ # erreur de parentheses '(count($analyzed_sql_results['select_expr']) == 1)'
+sudo service apache2 restart
 
 
 
@@ -102,6 +179,8 @@ les paquets Python libres1. Il est analogue au dépôt CPAN pour Perl
 * pip:
 
 A partir des versions 2.7.9 et et 3.4, pip est fournit automatiquement avec Python.
+
+sudo apt install python3-pip
 
 pip install --user bottle
 pip uninstall bottle
@@ -125,6 +204,10 @@ pip install git+git://github.com/sametmax/0bin.git # pourvu que le code source v
 * Python mysqlclient :
 
 sudo apt-get install libssl-dev # Unable to install mysqlclient using pip (Ubuntu 18.04 LTS)
+            ou
+apt-get install default-libmysqlclient-
+            et
+pip install mysqlclient
 
 lsb_release _a # afficher version linux
 
@@ -132,7 +215,11 @@ Environnement Virtuel :
 
 pip install --user virtualenv
 
+DJANGO :
+--------
 
+sudo pip3 install django-debug-toolbar
+sudo pip3 install dj-database-url
 
 
 
