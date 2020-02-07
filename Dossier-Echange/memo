@@ -22,8 +22,6 @@ Set-ExecutionPolicy Unrestricted
 
 C:\Windows\system32> Send-MailMessage -From "geo1310@hotmail.fr" -To "gbriche59@yahoo.fr" -Subject "votre objet" -SmtpServer "smtp.mail.yahoo.fr" -Body "Le corps du mail" -Attachments "le chemin d’accès à votre fichier"
 
-https://www.youporn.com/watch/14901473/bratty-sis-horny-brother-slips-cock-into-besties-teen-pussy-s6-e1/
-
 
 #
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
@@ -220,6 +218,14 @@ DJANGO :
 
 sudo pip3 install django-debug-toolbar
 sudo pip3 install dj-database-url
+
+sudo apt install liapache2-mod-wgsi
+http://packages.debian.org/wheezy/libapache2-mod-wsgi
+
+TEST DE DEPLOIEMENT :
+---------------------
+django-admin startproject idreammicro # dans le dossier django_apps
+django-admin startapp helloword
 
 
 
